@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    background-image: linear-gradient(50deg,pink,black);
+    font-family: 'Arial', sans-serif;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.clock-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: azure;
+
+}
+
+.analog-clock, .digital-clock {
+    margin: 20px;
+
+}
+
+.analog-clock .clock-face {
+    width: 200px;
+    height: 200px;
+    border: 7px solid #333;
+    border-radius: 50%;
+    position: relative;
+    background: pink;
+
+}
+
+.hand {
+    width: 50%;
+    height: 6px;
+    background: #333;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+.hour-hand {
+    height: 6px;
+}
+
+.minute-hand {
+    height: 4px;
+    background :green  ;
+}
+
+.second-hand {
+    height: 2px;
+    background: red;
+}
+
+
+.digital-clock #digital-time {
+    font-size: 5em;
+    color:black;
+    border: 2px solid black;
+    margin: 20px;
+    background:lightblue;
+
+}
+
+@media (max-width: 600px) {
+    .clock-container{
+        flex-direction:column;
+        align-items: center;
+    }
+    .analog-clock .clock-face {
+        width: 150px;
+        height: 150px;
+    }
+
+    .digital-clock #digital-time {
+        font-size: 1.5em;
+    }
+}
